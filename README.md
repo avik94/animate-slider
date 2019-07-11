@@ -1,27 +1,112 @@
-# AnimateSlider
+# animated-slider
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+This is a powerfull responsive Angular7 slider with **animation** added
 
-## Development server
+## Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Slider text font will be change with your project font
 
-## Code scaffolding
+Checkout the Demo...[Click Here](https://animate-slider-1b4fd.firebaseapp.com/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+To add the slider to your Angular project:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+npm install animate-slider
+```
+Once installed, add the slider to your app.module.ts:
 
-## Running unit tests
+```
+import { AnimateSliderModule } from "animate-slider";
+ 
+...
+ 
+@NgModule({
+   
+   imports: [
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+     AnimateSliderModule ,
+    ...
+   ]
 
-## Running end-to-end tests
+})
+export class AppModule {}
+```
+## Sample usage
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+@Component({...})
+export class AppComponent {
+  slides= [
+    { 
+      slideUrl: 'your image url',
+      slideAnimation:"fade",
+      text: "Your Text",
+      textAnimation : "slideFromLeft",
+      buttonText :"Your button text",
+      buttonLink: "button link",
+      buttonAnimation: "slideFormRight"
+    },
+    ...
+    ...
+}
+```
+   
+  #### Don't change the object property name in the array**
+  1. *slideAnimation* is used for **Slide animation**
+  2. *textAnimation* is used for **Caption Text animation**
+  3. *buttonAnimation* is used for **Button animation**
+  4. *text* is used for **Caption Text**
+  5. *slideUrl* is used for **Image**
+  6. *buttonText* is used for **Button Text**
+  7. *buttonLink* is used for **Button Link**  
 
-## Further help
+if you don't want the **animation/anything** just remove the property from the object.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+if you set button and text to false please remove all button or text property from your slide array for better performance.
+
+
+  
+And in template file app.component.html:
+
+```
+<animate-slider
+    [button]= "true"
+    [captionText] = "true"
+    [slide] = "images"
+    [autoPlay] = "false"
+    [speed] = "1000"
+    [height] = "40">
+</animate-slider>
+```
+Boom!!   
+That's All you have to do
+## Documentation
+*all important directives
+
+| Directive     | value      |  Function |
+| :----------    | :----------: | ----------: |
+| [button]      | true/false | show & hide Button |
+| [captionText] | true/false | show & hide Caption text |
+| [slide]       | Array of your slide (*Mandatory*) | For each slider |
+| [autoPlay]    | true/false (*optional*)| Auto rotate slide |
+| [speed]    | number (*optional*)| Speed  |
+| [height]    | number (*Mandatory*)| Slide height | 
+
+height is calculated as **vh**. don't put value as **px**
+
+## Available Animation
+**[ slideFromRight ]**  
+**[ slideFromRightFast ]**   
+**[ slideFromLeft ]**    
+**[ slideFromLeftFast ]**  
+**[ slideFromTop ]**  
+**[ slideFromBottom ]**  
+**[ rotate ]**  
+**[ fade ]**
+    
+(*More animation will be implemented soon)
+
+## Important Note
+You can add only external-link to the button, don't use Router Link.   

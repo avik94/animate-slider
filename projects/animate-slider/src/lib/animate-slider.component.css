@@ -1,0 +1,70 @@
+.mainContainer{
+    position: relative;
+}
+body{
+    margin: 0px;
+}
+.mainRow{
+    padding: 0px;
+}
+.mainRow img{
+    width: 100%;
+}
+.indicator{
+    position: absolute;
+    left: 3vw;
+}
+
+.captionText{
+    position: absolute;
+    background: transparent;
+    height: 14vw;
+    width: 100%;
+    margin: auto;
+}
+.caption h2{
+    color: #ffffff;;
+    font-size: 2vw;
+    line-height: 2.3vw;
+    letter-spacing: 0.5px;
+    padding-bottom: 2.3vw;
+    text-align: center;
+    font-weight: bold;
+    width: 70%;
+    margin: auto;
+}
+@media only screen and (max-width: 430px) and (min-width: 320px) {
+    .caption h2{
+        padding-bottom: 0px!important;
+    }
+}
+
+
+.btnCustom a{
+    padding: 0.8vw 2vw;
+    border: 0.2vw solid rgb(236, 236, 236);
+    border-radius: 20px;
+    font-size: 1.1vw;
+    color: #f2f2f2;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.164);
+    text-decoration: none;
+}
+.btnCustom{
+    text-align: center;
+}
+
+i{
+    border:  solid #fff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 1vw;
+}
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}

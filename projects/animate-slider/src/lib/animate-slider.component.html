@@ -1,0 +1,38 @@
+<div class="mainContainer">
+    <!-- slider-section -->
+    <div class="mainRow">
+        <div *ngFor="let item of slide let i = index">
+            <img [ngStyle]="{'height': sliderHeight}" [src]="item.slideUrl" [@animation]="item.slideAnimation"
+                *ngIf="slideCount === i+1">
+        </div>
+    </div>
+    <!-- slider-end -->
+
+    <!-- caption-start -->
+
+    <div class="captionText" [ngStyle]="{'top': captionHeight}">
+        <div *ngFor="let item of slide let i = index">
+            <div class="caption" *ngIf="slideCount === i+1">
+                <div [@animation]="item.textAnimation" class="text" *ngIf="captionText">
+                    <h2>{{ item.text| uppercase }}</h2>
+                </div>
+                <div *ngIf="button" [@animation]="item.buttonAnimation" class="btnCustom">
+                    <a [href]="item.buttonLink">{{item.buttonText}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- caption-end -->
+
+    <!-- navigation -->
+    <div class="indicator" [ngStyle]="{'top': indicatorHeight}">
+        <span>
+            <i class="left" (click)="leftClick()"></i>
+        </span>
+        <span>
+            <i class="right" (click)="rightClick()"></i>
+        </span>
+    </div>
+    <!-- navigation-end -->
+</div>

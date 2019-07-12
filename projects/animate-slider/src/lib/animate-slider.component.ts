@@ -58,6 +58,9 @@ export class AnimateSliderComponent implements OnInit {
   @Input() speed;
   @Input() height;
   @Input() autoPlay;
+  @Input() textColor;
+  @Input() ButtontextColor;
+  @Input() ButtonBorderColor;
  
   sliderHeight;
   captionHeight;

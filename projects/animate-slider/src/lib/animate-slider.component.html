@@ -14,10 +14,11 @@
         <div *ngFor="let item of slide let i = index">
             <div class="caption" *ngIf="slideCount === i+1">
                 <div [@animation]="item.textAnimation" class="text" *ngIf="captionText">
-                    <h2>{{ item.text| uppercase }}</h2>
+                    <h2 [ngStyle]="{'color': textColor}">{{ item.text| uppercase }}</h2>
                 </div>
                 <div *ngIf="button" [@animation]="item.buttonAnimation" class="btnCustom">
-                    <a [href]="item.buttonLink">{{item.buttonText}}</a>
+                    <a [href]="item.buttonLink"
+                        [ngStyle]="{'color': ButtontextColor, 'border-color': ButtonBorderColor}">{{item.buttonText}}</a>
                 </div>
             </div>
         </div>

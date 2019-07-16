@@ -16,9 +16,13 @@
                 <div [@animation]="item.textAnimation" class="text" *ngIf="captionText">
                     <h2 [ngStyle]="{'color': textColor}">{{ item.text| uppercase }}</h2>
                 </div>
-                <div *ngIf="button" [@animation]="item.buttonAnimation" class="btnCustom">
+                <div *ngIf="buttonOutline" [@animation]="item.buttonAnimation" class="btnCustom">
                     <a [href]="item.buttonLink"
-                        [ngStyle]="{'color': ButtontextColor, 'border-color': ButtonBorderColor}">{{item.buttonText}}</a>
+                        [ngStyle]="{'color': buttontextColor, 'border-color': buttonBorderColor}">{{item.buttonText}}</a>
+                </div>
+                <div *ngIf="buttonFill" [@animation]="item.buttonAnimation" class="btnCustomFill">
+                    <a [href]="item.buttonLink"
+                        [ngStyle]="{'color': buttontextColor, 'background-color': buttonBackground}">{{item.buttonText}}</a>
                 </div>
             </div>
         </div>

@@ -47,20 +47,27 @@ import { transition, trigger, style, animate } from '@angular/animations';
         opacity:0.5,
         fontSize: "20px",
       }),animate(900)]),
+
+      transition("void=> zoomIn",[style({
+        opacity:0.5,
+        transform: "scale(1.5)"
+      }),animate(900)]),
     ]),
   ]
 })
 export class AnimateSliderComponent implements OnInit {
 
-  @Input() button;
+  @Input() buttonOutline;
+  @Input() buttonFill;
   @Input() captionText;
   @Input() slide;
   @Input() speed;
   @Input() height;
   @Input() autoPlay;
   @Input() textColor;
-  @Input() ButtontextColor;
-  @Input() ButtonBorderColor;
+  @Input() buttontextColor;
+  @Input() buttonBorderColor;
+  @Input() buttonBackground;
  
   sliderHeight;
   captionHeight;

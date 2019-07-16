@@ -12,7 +12,7 @@ export class AppComponent {
       slideUrl: 'assets/slide1.jpg',
       slideAnimation:"fade",
       text: "Powerful Animated Angular Slider Animated Angular Animated Angular Slider Animated Angular Slider",
-      textAnimation : "slideFromLeft",
+      textAnimation : "zoomIn",
       buttonText :"Click Me",
       buttonLink: "#",
       buttonAnimation: "slideFromRight"
